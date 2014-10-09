@@ -44,6 +44,24 @@ public class MainActivity extends ActionBarActivity {
                 "sampleuser@gmail.com"}; 
         // Submit the query and get a Cursor object back. 
         cur = cr.query(uri, EVENT_PROJECTION, selection, selectionArgs, null);
+        
+     // Use the cursor to step through the returned records
+        while (cur.moveToNext()) {
+            long calID = 0;
+            String displayName = null;
+            String accountName = null;
+            String ownerName = null;
+              
+            // Get the field values
+            calID = cur.getLong(PROJECTION_ID_INDEX);
+            displayName = cur.getString(PROJECTION_DISPLAY_NAME_INDEX);
+            accountName = cur.getString(PROJECTION_ACCOUNT_NAME_INDEX);
+            ownerName = cur.getString(PROJECTION_OWNER_ACCOUNT_INDEX);
+                      
+            // Do something with the values...
+
+           
+        }
     }
 
 

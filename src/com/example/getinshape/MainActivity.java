@@ -30,7 +30,6 @@ public class MainActivity extends ActionBarActivity {
 	private static final int PROJECTION_DISPLAY_NAME_INDEX = 2;
 	private static final int PROJECTION_OWNER_ACCOUNT_INDEX = 3;
 	
-    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH) @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

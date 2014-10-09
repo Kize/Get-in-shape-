@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.provider.CalendarContract.Calendars;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -45,6 +46,11 @@ public class MainActivity extends ActionBarActivity {
         // Submit the query and get a Cursor object back. 
         cur = cr.query(uri, EVENT_PROJECTION, selection, selectionArgs, null);
         
+
+        setContentView(R.layout.activity_main);
+        TextView textView = (TextView) findViewById(R.id.textView2);
+        textView.setText("The other one");
+        
      // Use the cursor to step through the returned records
         while (cur.moveToNext()) {
             long calID = 0;
@@ -60,7 +66,9 @@ public class MainActivity extends ActionBarActivity {
                       
             // Do something with the values...
 
-           
+            setContentView(R.layout.activity_main);
+            TextView textView2 = (TextView) findViewById(R.id.textView2);
+            textView2.setText("text you want to display");
         }
     }
 

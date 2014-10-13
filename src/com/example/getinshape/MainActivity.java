@@ -1,10 +1,12 @@
 package com.example.getinshape;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.content.ContentResolver;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -13,11 +15,9 @@ public class MainActivity extends ActionBarActivity {
 
 	  protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ContentResolver contentResolver = getContentResolver();
-        ReadCalendar cal = new ReadCalendar();
-        TextView text = (TextView) findViewById(R.id.textView1);
-        text.setText(cal.doInBackground(contentResolver));
+        setContentView(R.layout.index);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
 
 
@@ -38,5 +38,13 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public void start(View view){
+        setContentView(R.layout.activity_main);
+        ContentResolver contentResolver = getContentResolver();
+        ReadCalendar cal = new ReadCalendar();
+        TextView text = (TextView) findViewById(R.id.textView1);
+        text.setText(cal.doInBackground(contentResolver));
     }
 }

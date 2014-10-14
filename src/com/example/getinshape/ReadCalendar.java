@@ -1,32 +1,15 @@
 package com.example.getinshape;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 import android.content.ContentResolver;
-import android.content.ContentUris;
 import android.database.Cursor;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.provider.CalendarContract.Calendars;
 import android.provider.CalendarContract.Events;
-import android.text.format.DateUtils;
-import android.widget.TextView;
 
-public class ReadCalendar extends AsyncTask<ContentResolver, Void, String>{
+public class ReadCalendar {
 
-	public static final String[] EVENT_PROJECTION = new String[] {
-	    Calendars._ID,                           // 0
-	    Calendars.ACCOUNT_NAME,                  // 1
-	    Calendars.CALENDAR_DISPLAY_NAME,         // 2
-	    Calendars.OWNER_ACCOUNT                  // 3
-	};
-	
-	@Override
-	public String doInBackground(ContentResolver... params) {
+	public String getEvents(ContentResolver... params) {
 		
 		
 	ContentResolver contentResolver = params[0];

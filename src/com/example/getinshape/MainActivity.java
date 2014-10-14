@@ -45,6 +45,6 @@ public class MainActivity extends ActionBarActivity {
         ContentResolver contentResolver = getContentResolver();
         ReadCalendar cal = new ReadCalendar();
         TextView text = (TextView) findViewById(R.id.textView1);
-        text.setText(cal.doInBackground(contentResolver));
+        text.setText(cal.getEvents(contentResolver));
     }
 }

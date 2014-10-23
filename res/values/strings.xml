@@ -4,5 +4,9 @@
     <string name="app_name">Get in shape</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_index">Index</string>
+    <string name="dummy_button">Let\'s Go!</string>
+    <string name="dummy_content"></string>
+    <string name="title_activity_planification">Planification</string>
 
 </resources>

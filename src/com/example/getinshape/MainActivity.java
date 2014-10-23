@@ -1,8 +1,16 @@
 package com.example.getinshape;
 
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,9 +23,9 @@ public class MainActivity extends ActionBarActivity {
 
 	  protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.index);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+        setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this, Index.class);
+        startActivity(intent);
     }
 
 
@@ -40,11 +48,4 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     
-    public void start(View view){
-        setContentView(R.layout.activity_main);
-        ContentResolver contentResolver = getContentResolver();
-        ReadCalendar cal = new ReadCalendar();
-        TextView text = (TextView) findViewById(R.id.textView1);
-        text.setText(cal.getEvents(contentResolver));
-    }
 }
